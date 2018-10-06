@@ -1,0 +1,47 @@
+
+<div class="w3-container" *ngIf="flightDetail">
+  <div class="w3-panel w3-round-small w3-teal">
+    <h3>Flight Details <button [routerLink]="['/admin/update',flightDetail.flight_id]" class="w3-button w3-blue custom-button"> 
+        <i class="w3-medium fa fa-pencil"></i>
+        Edit</button> <button routerLink="/" class="w3-button w3-green custom-button margin-right"> <i class="w3-medium fa fa-chevron-left"></i>
+        Back</button></h3>
+  </div>
+  <div class=" w3-card custom-card"><br>
+    <h3 class="text-center">{{flightDetail.airline_name}}</h3>
+    <hr>
+    <table class="w3-table w3-bordered">
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i>Flight ID</td>
+        <td>: <b>{{flightDetail.airline_id}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i>Airline ID</td>
+        <td>: <b>{{flightDetail.airline_name}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i> From LOC</td>
+        <td>: <b>{{flightDetail.from_loc}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i> To LOC</td>
+        <td>: <b>{{flightDetail.to_loc}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i> Departure Time</td>
+        <td>: <b>{{flightDetail.dep_time}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i> Arrival Time</td>
+        <td>: <b>{{flightDetail.arrival_time}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i> No.of Seats</td>
+        <td>: <b>{{flightDetail.no_seats}}</b></td>
+      </tr>
+      <tr>
+        <td><i class="w3-medium custom-icon fa fa-user"></i> Duration</td>
+        <td>: <b>{{flightDetail.duration}}</b></td>
+      </tr>
+    </table>
+  </div>
+</div>

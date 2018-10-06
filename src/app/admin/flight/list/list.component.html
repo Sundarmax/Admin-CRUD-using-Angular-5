@@ -1,0 +1,42 @@
+<!-- Created By : Sundar Rajan -->
+<div class="w3-container">
+	<div class="w3-panel w3-round-small w3-teal">
+		<h3>Flight List <button routerLink="/admin/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i>
+				Add New Flight</button></h3>
+	</div>
+
+	<span><i class="w3-medium fa fa-search"></i> Search : <input class="" type="text"></span>
+	<div class="w3-panel w3-light-grey w3-padding-16 w3-card-2">
+		<table class="w3-table w3-striped w3-bordered">
+			<tr>
+				<th><i class="w3-medium custom-icon fa fa-refresh"></i> Sr. No.</th>
+				<!-- <th>ID</th> -->
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Flight ID</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Airline ID</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Airline Name</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> From LOC</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> To LOC</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Departure</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Arrival Time</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i>No.of Seats</th>
+				<th><i class="w3-medium custom-icon fa fa-user"></i> Duration</th>
+				<th><i class="w3-medium custom-icon fa fa-pencil"></i>Update</th>
+				<th><i class="w3-medium custom-icon fa fa-trash"></i>Delete</th>
+			</tr>
+			<tr *ngFor="let flight of flightListData,index as i" appHighlightStudent>
+				<td>{{i +1}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.flight_id}} </td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.airline_id}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.airline_name}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.from_loc}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.to_loc}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.dep_time}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.arrival_time}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.no_seats}}</td>
+				<td class="pointer" [routerLink]="['detail', flight.flight_id]">{{flight.duration}}</td>
+				<td><button [routerLink]="['update', flight.flight_id]" class="w3-button w3-blue">Update</button></td>
+				<td><button class="w3-button w3-red" (click)="deleteFlight(flight.flight_id);">Delete</button></td>
+			</tr>
+		</table>
+	</div>
+</div>

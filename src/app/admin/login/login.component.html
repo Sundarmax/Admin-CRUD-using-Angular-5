@@ -1,0 +1,20 @@
+<!-- Created By : Sundar Rajan (http://gbsservice.in) -->
+<div class="w3-container align-center w3-card login-card">
+	<h1 id="fh5co-logo"><a href="#"><i class="icon-airplane"></i>Travel</a></h1>
+	<form name="form" #f="ngForm">
+		<input class="w3-input w3-border" type="email" name="username" [(ngModel)]="Model.username" #username="ngModel"
+		 placeholder="Username">
+		<input class="w3-input w3-border" type="password" name="password" [(ngModel)]="Model.password" #password="ngModel"
+		 placeholder="Password">
+		<div class="w3-panel w3-red"> </div>
+		<br>
+		<button class="w3-btn w3-blue" (click)="doLogin()" type="submit">Login <i class="w3-medium fa fa-check"></i> </button>
+	</form>
+</div>
+
+<!-- <div class="w3-panel w3-blue-gray">
+		<h4>Notes : </h4>
+		<p>Credentials : admin@user.com&amp; admin123</p>
+		<p>All data will be restored when refreshed </p>
+</div> -->
+<!-- Created By : Sundar Rajan (http://gbsservice.in) -->
